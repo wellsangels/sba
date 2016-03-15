@@ -1,0 +1,12 @@
+#wtf function
+makeDF <- function(array){
+  for(i in unique(array){
+      years <- c(2000:2015)
+      this.df <- as.data.frame(years)
+      this.naics <- subset(data.2000, NaicsDescription == i)
+      total.df <- t(as.data.frame(tapply(this.naics$GrossApproval, this.naics$ApprovalFiscalYear, sum)))
+      total.df$year <- row.names(total.df)
+      this.df <- merge(this.df, total.df, by = “year”, all = TRUE)
+  }
+  assign(“this.df”, this.df, enviro = globalenv())
+}
